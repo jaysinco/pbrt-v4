@@ -61,6 +61,7 @@ function cmake_build() {
     compiler_cuda=$([ "$os" == "linux" ] && echo "/usr/local/cuda/bin/nvcc" || echo "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.4/bin/nvcc.exe")
     optix7_path=$([ "$os" == "linux" ] && echo "/opt/nvidia/NVIDIA-OptiX-SDK-7.3.0-linux64-aarch64" || echo "C:/ProgramData/NVIDIA Corporation/OptiX SDK 7.3.0")
     compiler_cuda=$([ $do_with_gpu -eq 0 ] && echo "OFF" || echo "$compiler_cuda")
+    cuda_arch=$([ "$os" == "linux" ] && echo "87" || echo "86")
 
     mkdir -p \
         $build_folder \
@@ -74,8 +75,8 @@ function cmake_build() {
         -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=$binary_folder \
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
         -DCMAKE_CUDA_COMPILER="$compiler_cuda" \
+        -DCMAKE_CUDA_ARCHITECTURES=$cuda_arch \
         -DPBRT_OPTIX7_PATH="$optix7_path" \
-        -DCMAKE_CUDA_ARCHITECTURES="86" \
     && \
     cp $build_folder/compile_commands.json $build_folder/.. \
     && \

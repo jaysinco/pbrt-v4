@@ -1,5 +1,5 @@
 CompileFlags:
-  CompilationDatabase: ./
+  CompilationDatabase: ./out
   Add:
     - --cuda-path=/usr/local/cuda-11.4
     - -I/usr/local/cuda-11.4/include
@@ -10,6 +10,7 @@ CompileFlags:
   Remove:
     - -G
     - -W*
+    - -X*
     - -arch=*
     - -rdc=*
     - --generate-code=*
