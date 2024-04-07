@@ -1,0 +1,31 @@
+CompileFlags:
+  CompilationDatabase: ./
+  Add:
+    - --cuda-path=C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.4
+    - -IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.4/include
+    - -LC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.4/lib/x64
+  Remove:
+    - -G
+    - -W*
+    - -arch=*
+    - -rdc=*
+    - --generate-code=*
+    - -permissive*
+    - --gpu-architecture=*
+    - --diag_suppress=*
+    - --use_fast_math
+    - --expt-relaxed-constexpr
+    - --extended-lambda
+    - --forward-unknown-to-host-compiler
+    - -forward-unknown-to-host-compiler
+    - -suppress-stack-size-warning
+    - -maxrregcount
+    - -ptx
+
+Diagnostics:
+  Suppress: '*'
+
+InlayHints:
+  Enabled: No
+  ParameterNames: Yes
+  DeducedTypes: Yes
