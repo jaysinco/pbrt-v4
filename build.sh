@@ -62,6 +62,7 @@ function cmake_build() {
     optix7_path=$([ "$os" == "linux" ] && echo "/opt/nvidia/NVIDIA-OptiX-SDK-7.3.0-linux64-aarch64" || echo "C:/ProgramData/NVIDIA Corporation/OptiX SDK 7.3.0")
     compiler_cuda=$([ $do_with_gpu -eq 0 ] && echo "OFF" || echo "$compiler_cuda")
     cuda_arch=$([ "$os" == "linux" ] && echo "87" || echo "86")
+    extra_flags=$([ "$os" == "linux" ] && echo "-DCMAKE_POSITION_INDEPENDENT_CODE=ON" || echo "-DCMAKE_MSVC_RUNTIME_LIBRARY=\"MultiThreadedDLL\"")
 
     mkdir -p \
         $build_folder \
@@ -77,6 +78,7 @@ function cmake_build() {
         -DCMAKE_CUDA_COMPILER="$compiler_cuda" \
         -DCMAKE_CUDA_ARCHITECTURES=$cuda_arch \
         -DPBRT_OPTIX7_PATH="$optix7_path" \
+        $extra_flags \
     && \
     cp $build_folder/compile_commands.json $build_folder/.. \
     && \
