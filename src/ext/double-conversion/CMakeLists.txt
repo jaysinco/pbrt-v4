@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(double-conversion VERSION 3.1.5)
 
 if(BUILD_SHARED_LIBS AND MSVC)

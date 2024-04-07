@@ -9,7 +9,7 @@ set(CMAKE_C_STANDARD 99)
 # Options
 #
 # Generic option
-option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static ones (.lib/.a)" OFF)
+# option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static ones (.lib/.a)" OFF)
 
 # libdeflate options
 option(DEFLATE_DECOMPRESSION_ONLY "Omit all compression code, building a decompression-only library" OFF)
@@ -18,7 +18,7 @@ option(DEFLATE_DISABLE_ZLIB "disable support for the zlib wrapper format" OFF)
 
 option(DEFLATE_DISABLE_GZIP "disable support for the gzip wrapper format" OFF)
 
-option(DEFLATE_FREESTANDING "build a freestanding library, i.e. a library that doesn't 
+option(DEFLATE_FREESTANDING "build a freestanding library, i.e. a library that doesn't
                              link to any libc functions like malloc(), free(),
                              and memcpy(). All users will need to call
                              libdeflate_set_memory_allocator()." OFF)

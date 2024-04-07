@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 project(ptex)
 
 option(PTEX_BUILD_STATIC_LIBS "Enable building Ptex static libraries" ON)
@@ -31,10 +31,10 @@ if(MSVC)
     add_definitions(
 
         #warning C4800: 'BOOL': forcing value to bool 'true' or 'false' (performance warning)
-        /wd4800 
+        /wd4800
 
         #warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-        /wd4244 
+        /wd4244
 
         /D_CRT_SECURE_NO_WARNINGS
     )
