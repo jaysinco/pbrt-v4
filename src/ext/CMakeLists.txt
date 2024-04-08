@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.12)
 
 if (MSVC)
   add_definitions(/D _CRT_SECURE_NO_WARNINGS /Dstrdup=_strdup
-    /wd4018 /wd4100 /wd4101 /wd4127 /wd4146 /wd4232 /wd4242 /wd4244 /wd4245 /wd4267 /wd4305 /wd4309 
+    /wd4018 /wd4100 /wd4101 /wd4127 /wd4146 /wd4232 /wd4242 /wd4244 /wd4245 /wd4267 /wd4305 /wd4309
     /wd4310 /wd4334 /wd4456 /wd4464 /wd4668 /wd4701 /wd4703 /wd4711 /wd4756 /wd4820 /wd5045 /wd5250)
 endif ()
 
@@ -30,7 +30,7 @@ set_property (TARGET deflate PROPERTY FOLDER "ext")
 ###########################################################################
 # zlib
 
-find_package (ZLIB)
+# find_package (ZLIB)
 if (NOT ZLIB_FOUND)
   # Build zlib
   set (ZLIB_BUILD_STATIC_LIBS ON CACHE BOOL " " FORCE)
@@ -57,7 +57,7 @@ set (ZLIB_LIBRARIES ${ZLIB_LIBARIES} PARENT_SCOPE)
 ###########################################################################
 # OpenEXR
 
-find_package (OpenEXR 2.3) # 2.3 is the first version compatible with C++17
+# find_package (OpenEXR 2.3) # 2.3 is the first version compatible with C++17
 
 if (OPENEXR_FOUND)
   message (STATUS "Found OpenEXR version ${OPENEXR_VERSION}")
@@ -170,4 +170,3 @@ add_subdirectory (glad)
 
 set_property (TARGET glfw PROPERTY FOLDER "ext")
 set_property (TARGET glad PROPERTY FOLDER "ext")
-
