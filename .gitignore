@@ -8,3 +8,5 @@ build/
 .cache/
 bin/
 out/
+*.png
+*.exr
