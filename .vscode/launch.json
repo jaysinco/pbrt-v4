@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++: Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/debug-cpu/pbrt.exe",
+            "args": [
+                "--nthreads",
+                "1",
+                "--outfile",
+                "ball.png",
+                "--write-partial-images",
+                "${workspaceFolder}/scenes/ball.pbrt"
+            ],
+            "environment": [],
+            "cwd": "${workspaceFolder}/bin/debug-cpu",
+            "stopAtEntry": false,
+            "logging": {
+                "moduleLoad": true,
+                "trace": false
+            }
+        }
+    ]
+}
