@@ -17,7 +17,7 @@
             "cwd": "${workspaceFolder}/bin/debug-cpu",
             "stopAtEntry": false,
             "logging": {
-                "moduleLoad": true,
+                "moduleLoad": false,
                 "trace": false
             }
         }
