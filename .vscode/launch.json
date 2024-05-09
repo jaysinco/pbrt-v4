@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++: Launch",
+            "name": "launch pbrt",
             "type": "cppvsdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/debug-cpu/pbrt.exe",
@@ -12,6 +12,23 @@
                 "--display-server",
                 "localhost:14158",
                 "${workspaceFolder}/scenes/test.pbrt"
+            ],
+            "environment": [],
+            "cwd": "${workspaceFolder}/bin/debug-cpu",
+            "stopAtEntry": false,
+            "logging": {
+                "moduleLoad": false,
+                "trace": false
+            }
+        },
+        {
+            "name": "launch pbrt test",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/debug-cpu/pbrt_test.exe",
+            "args": [
+                "--test-filter",
+                "StringPrintf.Basics",
             ],
             "environment": [],
             "cwd": "${workspaceFolder}/bin/debug-cpu",
