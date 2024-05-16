@@ -39,7 +39,7 @@ if [ $do_build_debug -eq 1 ]; then
     build_type=Debug
 fi
 
-arch=`arch`
+arch=`uname -m`
 case "$OSTYPE" in
     linux*)   os=linux ;;
     msys*)    os=windows ;;

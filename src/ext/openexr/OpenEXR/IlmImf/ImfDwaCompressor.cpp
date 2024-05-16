@@ -158,6 +158,7 @@
 #include <algorithm>
 
 #include <cstddef>
+#include <cstdint>
 
 
 // Windows specific addition to prevent the indirect import of the redefined min/max macros
